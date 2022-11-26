@@ -36,7 +36,7 @@ as.post("/", async function (req, res) {
     try {
         const connection = await mongoClient.connect(URL);
         const db = connection.db("Money-manager");
-        const temp = await db.collection("users").findOne({ username: req.body.username })
+        const temp = await db.collection("users").findOne({ email: req.body.email })
         if (temp) {
             const match = await bcryptjs.compare(req.body.password, temp.password);
             if (match) {
