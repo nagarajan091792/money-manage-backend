@@ -11,7 +11,7 @@ const SECRET=process.env.SECRET;
 
 as.use(express.json());
 as.use(cors({
-    orgin: "*"
+    orgin: "https://glittery-custard-4fda9f.netlify.app/"
 }));
 
 const authenticate=function(req,res,next){
